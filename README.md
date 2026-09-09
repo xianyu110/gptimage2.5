@@ -1,7 +1,6 @@
 # GPT Image 2.5 国内使用汇总
 
 > 主题：ChatGPT Images 2.5 / GPT-Image-2.5 怎么用、国内怎么进门  
-> 正文整理自公众号实测：[ChatGPT Images 2.5 实测：AI 生图，开始变成设计工具了](https://mp.weixin.qq.com/s/ah_zvKyPMZZkKZo7C3vMdQ)（AI小范儿）  
 > 并补充国内访问路径（MaynorAI）  
 > 更新日期：2026-09-09
 
