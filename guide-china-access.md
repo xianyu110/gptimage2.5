@@ -21,10 +21,10 @@
 
 | 你要什么 | 优先走哪条 |
 | --- | --- |
-| Sketch / Templates / 图上留言改（完整体验） | **官方 ChatGPT**（自备网络与付款） |
-| 不想折腾魔法与海外号，先能出图干活 | **Codex 国内站 / MomoAI 包月** |
-| 批量出图、接自己的产品 | **API 聚合（Flare / Sunburst）** |
-| 网页免梯轻体验 | **国内高速镜像** |
+| Sketch / Templates / 图上留言改（完整体验） | **[官方 ChatGPT](https://chatgpt.com)**（自备网络与付款；代充可用 [chongzhi.trygpt.asia](https://chongzhi.trygpt.asia/)） |
+| 不想折腾魔法与海外号，先能出图干活 | **[Codex 国内站 / MomoAI](https://momoai.asia/login)**（备用 [codex.trygpt.asia](https://codex.trygpt.asia/login)；购买 [momoai.dadoudou117.com](https://momoai.dadoudou117.com/)） |
+| 批量出图、接自己的产品 | **[API 聚合 TryAllAPI](https://tryallapi.com/)**（Flare / Sunburst） |
+| 网页免梯轻体验 | **[国内高速镜像](https://trygpt.asia/list/#/home)**（总览 [xianyu110.github.io/GPT6](https://xianyu110.github.io/GPT6/)） |
 
 > 硬提醒：四月的 **Images 2.0 / gpt-image-2** ≠ 九月的 **Images 2.5 / GPT-Image-2.5**。国内站写的「GPTimage2」也不等于自动已切到 2.5——买之前问清模型名。
 
