@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ChatGPT Images 2.5 国内怎么用？4 条路径一次说清</title>
-<meta name="description" content="ChatGPT Images 2.5 / GPT-Image-2.5 中文教程：Sketch、Templates、局部改图、Flare/Sunburst 与国内使用途径"/>
-<link rel="canonical" href="https://xianyu110.github.io/gptimage2.5/"/>
+<title>GPT Image 2.5 国内使用汇总</title>
+<meta name="description" content="GPT Image 2.5 / ChatGPT Images 2.5 国内使用汇总：官方、Codex 国内站、API、镜像四条路径 + 实测要点"/>
+<link rel="canonical" href="https://xianyu110.github.io/gptimage2.5/china.html"/>
 <style>
 :root {
   --bg:#0b0f14; --card:#121821; --text:#e8eef7; --muted:#9aa7b8;
@@ -40,40 +40,42 @@ a { color: var(--accent); }
 img { max-width:100%; height:auto; border-radius:12px; display:block; margin:14px 0; border:1px solid var(--line); }
 blockquote {
   margin: 1rem 0; padding: 10px 14px; border-left: 3px solid var(--accent);
-  background: rgba(110,231,255,.06); color:#d5e6f5;
+  background: rgba(110,231,255,.06); color: #c9d7ea;
 }
-table { width:100%; border-collapse: collapse; font-size:0.95rem; margin: 1rem 0; }
-th, td { border:1px solid var(--line); padding:8px 10px; vertical-align:top; }
-th { background: rgba(110,231,255,.08); text-align:left; }
-code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:0.9em; }
+table { width:100%; border-collapse: collapse; margin: 1rem 0; font-size:0.95rem; }
+th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+th { background: rgba(110,231,255,.08); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+code { background: rgba(0,0,0,.35); padding: 2px 6px; border-radius: 6px; }
 pre {
-  background:#0a1018; border:1px solid var(--line); border-radius:12px;
-  padding:12px 14px; overflow:auto;
+  background: rgba(0,0,0,.4); padding: 14px; border-radius: 12px; overflow-x:auto;
+  border:1px solid var(--line);
 }
-pre code { font-size:0.86rem; }
-em { color: var(--muted); }
-.footer { margin-top:22px; color:var(--muted); font-size:13px; text-align:center; }
+pre code { background: none; padding:0; }
+.footer { margin-top:28px; color:var(--muted); font-size:13px; text-align:center; }
 </style>
 </head>
 <body>
-<div class="wrap">
-
+  <div class="wrap">
     <nav class="nav">
-      <a href="./" class="">玩法教程</a>
-      <a href="./china.html" class="active">国内使用途径</a>
-      <a href="https://github.com/xianyu110/gptimage2.5" target="_blank" rel="noopener">GitHub</a>
+      <a href="./" class="active">国内使用汇总</a><a href="./playbook.html">玩法教程</a><a href="https://github.com/xianyu110/gptimage2.5" target="_blank" rel="noopener">GitHub</a>
     </nav>
-<article>
-<h1>ChatGPT Images 2.5 国内怎么用？4 条路径一次说清（含 Sketch / API）</h1>
+    <article>
+<h1>GPT Image 2.5 国内使用汇总</h1>
 <blockquote>
-<p>2026-09-09 · MaynorAI<br />
-配合上一篇玩法教程食用；本文只讲<strong>怎么进门</strong>，不讲玄学提示词。</p>
+<p>主题：ChatGPT Images 2.5 / GPT-Image-2.5 怎么用、国内怎么进门<br />
+正文整理自公众号实测：<a href="https://mp.weixin.qq.com/s/ah_zvKyPMZZkKZo7C3vMdQ">ChatGPT Images 2.5 实测：AI 生图，开始变成设计工具了</a>（AI小范儿）<br />
+并补充国内访问路径（MaynorAI）<br />
+更新日期：2026-09-09</p>
 </blockquote>
-<p>先泼一盆冷水，再说干货：</p>
-<p><strong>Images 2.5 是 9 月 8 日刚上的。</strong><br />
-官方 ChatGPT 里，Sketch、Templates、图上留言改，体验最完整。<br />
-国内镜像 / 中转 / 套餐站，很多还在 <strong>GPTimage2 / Images 2.0</strong> 档，或刚开始滚动接 <strong>Flare / Sunburst</strong>——买之前先问清模型名，别被「2.5」三个字骗了。</p>
-<p>一句话选型：</p>
+<hr />
+<h2>先看结论</h2>
+<p><strong>Images 2.0 解决「能画」。Images 2.5 解决「能改、能迭代、能量产」。</strong></p>
+<p>2026 年 9 月 8 日，OpenAI 上线 ChatGPT Images 2.5：主体更稳、多轮编辑更可控，细节 / 复杂布局 / 速度一起抬；工具侧新增 <strong>Sketch 草图</strong>、<strong>创作模板</strong>、<strong>图片评论</strong>、<strong>提示词分享</strong>。</p>
+<p>对国内用户来说，真正卡点往往不是「会不会写 prompt」，而是：<strong>完整能力在官方端，低门槛入口在国内站 / API / 镜像，型号别混。</strong></p>
 <table>
 <thead>
 <tr>
@@ -83,230 +85,194 @@ em { color: var(--muted); }
 </thead>
 <tbody>
 <tr>
-<td>完整 2.5（Sketch / Templates / 留言改）</td>
-<td><strong>路径 A：官方 ChatGPT</strong></td>
+<td>Sketch / Templates / 图上留言改（完整体验）</td>
+<td><strong>官方 ChatGPT</strong>（自备网络与付款）</td>
 </tr>
 <tr>
-<td>不想折腾网络和海外号，先能出图干活</td>
-<td><strong>路径 B：Codex 国内站 / 包月套餐</strong></td>
+<td>不想折腾魔法与海外号，先能出图干活</td>
+<td><strong>Codex 国内站 / MomoAI 包月</strong></td>
 </tr>
 <tr>
 <td>批量出图、接自己的产品</td>
-<td><strong>路径 C：API 聚合</strong></td>
+<td><strong>API 聚合（Flare / Sunburst）</strong></td>
 </tr>
 <tr>
-<td>网页免梯聊两句、轻量改图</td>
-<td><strong>路径 D：国内高速镜像</strong></td>
+<td>网页免梯轻体验</td>
+<td><strong>国内高速镜像</strong></td>
 </tr>
 </tbody>
 </table>
-<p><img alt="OpenAI Images 2.5 发布" src="https://upload.maynor1024.live/file/1788915119447_06-openai-video-thumb.jpg" /></p>
-<p><em>9 月 8 日上线：更快、更好改。进门方式不同，能力完整度也不同。</em></p>
-<hr />
-<h2>先分清三件事（别踩坑）</h2>
-<ol>
-<li><strong>ChatGPT Images 2.5</strong>：产品侧名字，App / 网页里那套生图 + 编辑体验。  </li>
-<li><strong>GPT-Image-2.5 Flare / Sunburst</strong>：API 双模型——Flare 跑量，Sunburst 收口。  </li>
-<li><strong>国内站写的 GPTimage2</strong>：多数是上一波图像能力的商品名，<strong>≠ 自动等于昨天发布的 2.5</strong>。</li>
-</ol>
-<p>口诀：</p>
 <blockquote>
-<p><strong>要完整体验找官方；要低门槛先干活找国内站；要规模化找 API。</strong></p>
+<p>硬提醒：四月的 <strong>Images 2.0 / gpt-image-2</strong> ≠ 九月的 <strong>Images 2.5 / GPT-Image-2.5</strong>。国内站写的「GPTimage2」也不等于自动已切到 2.5——买之前问清模型名。</p>
 </blockquote>
 <hr />
-<h2>路径 A｜官方 ChatGPT：体验最全（Sketch 在这里）</h2>
-<p>适合：愿意处理网络与付款，想要 <strong>@Sketch、Templates、图上留言、Share Prompt</strong> 全套。</p>
-<p><strong>怎么做</strong></p>
+<h2>一、国内四条进门路径</h2>
+<h3>1）官方 ChatGPT：体验最全</h3>
+<p>适合：要 <code>@Sketch</code>、Templates、Comment / Select 局部改、Share Prompt 全套。</p>
 <ol>
-<li>准备可访问 ChatGPT 的网络环境（自行解决合规与稳定性）。  </li>
-<li>注册 / 登录 <a href="https://chatgpt.com">chatgpt.com</a>，更新手机 App。  </li>
-<li>对话里直接说「生成一张图」，或侧边栏 <strong>Images</strong>。  </li>
-<li>手机输入框打 <code>@</code> → <strong>Sketch</strong>，才是官方草图成片。  </li>
-<li><strong>Images → Templates</strong> 做海报骨架；全屏图可 <strong>Comment / Select</strong> 局部改。</li>
+<li>准备可访问 ChatGPT 的网络环境  </li>
+<li>打开 <a href="https://chatgpt.com">chatgpt.com</a>，更新手机 App  </li>
+<li>对话生图，或侧边栏 <strong>Images → Create Image</strong>  </li>
+<li>手机 / 网页输入框 <code>@</code> → <strong>Sketch</strong>  </li>
+<li><strong>Images → Templates</strong> 起海报；全屏图可标注 / 评论改</li>
 </ol>
-<p><img alt="官方样张：参考图换装前" src="https://upload.maynor1024.live/file/1788915104642_01-chatgpt-official-a.jpg" /></p>
-<p><img alt="同一主体换装后" src="https://upload.maynor1024.live/file/1788915106484_02-chatgpt-official-b.jpg" /></p>
-<p><em>官方 2.5 叙事：锁身份再换装——这类能力，目前仍以官方端最完整。</em></p>
-<p><strong>付费现实</strong></p>
-<ul>
-<li>Free 也能生图，但额度紧。  </li>
-<li>重度改图 / Thinking 生图，更常见是 Plus / Pro。  </li>
-<li>国内信用卡过不去时，再考虑下面的<strong>代充通道</strong>（第三方，付款前核对归属）。</li>
-</ul>
-<p><strong>代充入口（支付卡点专用）</strong><br />
-https://chongzhi.trygpt.asia/</p>
-<blockquote>
-<p>代充 ≠ 官方客服。核对订单归属、到账方式，别信「永久号」「无限额度」。</p>
-</blockquote>
-<hr />
-<h2>路径 B｜Codex 国内站 / MomoAI 包月：低门槛先跑通</h2>
-<p>适合：不想魔法、不想海外手机号，想把<strong>写代码 + 出图</strong>放同一条链路里先干活。</p>
-<p>这是第三方中转方案，<strong>不是 OpenAI 官方订阅</strong>。价值是：门槛低、价格友好、教程短。</p>
-<p><strong>主入口</strong></p>
+<p>付费现实：Free 也能生图但额度紧；重度改图常见 Plus / Pro。国内卡过不去时可用代充通道（第三方，付款前核对归属）：https://chongzhi.trygpt.asia/</p>
+<h3>2）Codex 国内站 / MomoAI：低门槛先跑通</h3>
+<p>适合：不想魔法、不想海外手机号，写代码 + 出图同一条链路。</p>
 <ul>
 <li>国内站：https://momoai.asia/login  </li>
 <li>备用：https://codex.trygpt.asia/login  </li>
 <li>套餐页：https://momoai.asia/home  </li>
-<li>购买（Codex &amp; GPTimage2 包月）：https://momoai.dadoudou117.com/  </li>
-<li>备用店铺：https://momoai.czvip.cn/  </li>
-<li>完整教程：https://news.maynorai.asia/blog/codex-china-gpt-5-6-launch  </li>
+<li>购买：https://momoai.dadoudou117.com/  </li>
+<li>教程：https://news.maynorai.asia/blog/codex-china-gpt-5-6-launch  </li>
+<li>介绍页：https://codex.maynorai.top/</li>
 </ul>
-<p><strong>推荐流程</strong></p>
-<ol>
-<li>买套餐 → 按教程配置  </li>
-<li>下 Codex Desktop（Mac / Windows）  </li>
-<li>新建项目文件夹 → 新建 Thread → 小任务先跑通  </li>
-<li>需要配图时，走套餐内的 <strong>GPTimage2</strong> 能力（封面、主图、Banner）</li>
-</ol>
-<p><img alt="创作者向出图工作流" src="https://upload.maynor1024.live/file/1788916225428_play-rrweb3.jpg" /></p>
-<p><em>国内站优势是「今晚就能出片」；模型是否已切到 Images 2.5 Flare/Sunburst，以站内实际模型列表为准。</em></p>
-<p><strong>和官方比，你要接受什么</strong></p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>官方 ChatGPT</th>
-<th>Codex 国内站</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sketch / Templates</td>
-<td>有（手机 / Images 面板）</td>
-<td>通常没有完整产品 UI</td>
-</tr>
-<tr>
-<td>网络 / 海外号</td>
-<td>常需自备</td>
-<td>教程向：免魔法、免海外号</td>
-</tr>
-<tr>
-<td>价格</td>
-<td>官方订阅价</td>
-<td>第三方套餐，常见更低门槛</td>
-</tr>
-<tr>
-<td>图像型号</td>
-<td>Images 2.5 产品侧</td>
-<td>多为 GPTimage2，滚动升级中</td>
-</tr>
-</tbody>
-</table>
-<p>问客服 / 看模型列表时，直接问这三句：</p>
+<p>这是<strong>第三方中转，不是 OpenAI 官方订阅</strong>。套餐内常见 <strong>GPTimage2</strong> 能力——是否已上 Images 2.5 Flare/Sunburst，以站内模型列表为准。问客服可直接问：</p>
 <pre><code class="language-text">1）现在图像是 gpt-image-2 还是 gpt-image-2.5？
-2）有没有 Flare / Sunburst 可选？
-3）额度按张算还是按套餐共享？
+2）有没有 Flare / Sunburst？
+3）额度按张还是套餐共享？
+</code></pre>
+<h3>3）API 聚合：批量与产品接入</h3>
+<p>适合：工具站、自动出图、批量封面。</p>
+<ul>
+<li>TryAllAPI：https://tryallapi.com/</li>
+</ul>
+<p>日更 / 草稿 → <strong>Flare</strong>；终稿 / 复杂文字 → <strong>Sunburst</strong>。2.5 刚发，有的站会先挂名后接通——先打 1 张样张再批量。</p>
+<h3>4）国内高速镜像：轻试用</h3>
+<ul>
+<li>镜像导航：https://trygpt.asia/list/#/home  </li>
+<li>渠道总览：https://xianyu110.github.io/GPT6/</li>
+</ul>
+<p>当试用入口，不当唯一生产资料库；Sketch / Templates 多数网页镜像跟不上官方 App。</p>
+<h3>一张图做决策</h3>
+<pre><code class="language-text">要 Sketch / Templates / 留言改？
+  └─ 是 → 官方 ChatGPT（+ 必要时代充）
+  └─ 否 → 只要能稳定出图？
+        └─ 写代码+出图 → 国内站套餐
+        └─ 批量/接产品 → API
+        └─ 先随便试试 → 镜像导航
 </code></pre>
 <hr />
-<h2>路径 C｜API 聚合：批量与产品接入</h2>
-<p>适合：做工具站、自动出图、批量封面、自己的 SaaS 后台。</p>
-<p>国内常用入口之一：<strong>TryAllAPI</strong>（全模型聚合）<br />
-https://tryallapi.com/</p>
-<p><strong>怎么用（思路）</strong></p>
-<ol>
-<li>注册拿 Key  </li>
-<li>看模型目录是否出现 <code>gpt-image-2.5-flare</code> / <code>gpt-image-2.5-sunburst</code>（或站点自定义别名）  </li>
-<li>日更 / 草稿 → <strong>Flare</strong>；终稿 / 复杂文字 → <strong>Sunburst</strong>  </li>
-<li>成本按张或按 token 盯账单，设预算告警</li>
-</ol>
-<p><img alt="Flare 速度向 vs Sunburst 精度向" src="https://upload.maynor1024.live/file/1788916228706_play-flare-sunburst-jp.jpg" /></p>
-<p><em>API 选型口诀：Flare 跑量，Sunburst 收口。</em></p>
-<p><strong>注意</strong></p>
+<h2>二、2.5 实测要点（整理自 AI小范儿）</h2>
+<p>上周 GPT-6 Astra 刚炸完，ChatGPT 图片又更新到 <strong>Images 2.5</strong>。上一代 Images 2.0 是 2026-04-21：更懂现实世界、更好执行指令、密集文字与 Thinking 模式。很多创作者从那时起就把公众号封面 / 插图交给 GPT Image 2。</p>
+<p>2.5 在 2.0 基础上重点加强：</p>
 <ul>
-<li>聚合站模型名可能和官方 id 不完全一致，以控制台为准。  </li>
-<li>2.5 刚发，<strong>有的站会先挂名、后接通</strong>——先打 1 张样张再批量。  </li>
-<li>密钥当密码管：别提交到 GitHub，别塞进前端。</li>
+<li><strong>主体一致性</strong>与<strong>多轮编辑</strong>  </li>
+<li>细节、复杂布局、生成速度  </li>
+<li>工具：Sketch、模板、图片评论、提示词分享  </li>
 </ul>
-<p>选型短表：</p>
+<p>最关心的两件事：<strong>照片改完还像不像原来的人</strong>，以及这些设计 / 修图功能好不好用。</p>
+<h3>1）模型升级：主体更稳，修改更可控</h3>
+<h4>换衣服、换背景，再换发型</h4>
+<p>给一张参考照片，只说：</p>
+<blockquote>
+<p>把服装换成运动装。</p>
+</blockquote>
+<p>结果：衣服裤子换了，鞋子袜子也配上；运动服和袜子甚至补出耐克标志（未指定品牌）。脸的观感仍接近原人。</p>
+<p>继续：背景换成上海城市街头，再改发型发色——整体形象保留满意；但姿态和背景细节仍会跟着动，<strong>还不能说「除指定处完全不动」</strong>。</p>
+<h4>用自己的头像做地狱测试</h4>
+<p>原图骑马、马腿没拍全。目标：补全马下半身并跑起来，同时尽量保留本人。脸放大后几乎看不出明显变化。</p>
+<p>边界出现在：改成双手握缰绳 + 换黄毛。原图手和墨镜挡了一部分脸，动作一改就要「脑补」未见部分，相似度会掉。</p>
+<p><strong>经验：</strong> 改自己的照片尤其动脸和姿态时，尽量给清楚、遮挡少的参考图。</p>
+<p>官方还有三张人像合成一张聚会合照的演示，可对照主体保留能力。</p>
+<h3>2）创作工具：从草图到修图、分享</h3>
+<h4>Sketch：先画草图再成片</h4>
+<p>输入框 <code>@Sketch</code> 开画布：调笔触、颜色、文字形状、橡皮。</p>
+<p>随手画小人 → 要求更精致插画：头发、裙子、笑脸、颜色纹理都会补上。<strong>说不清形状时，直接画给它看。</strong></p>
+<h4>Templates：海报起稿</h4>
+<p>选海报模板，提示词自动进输入框，可改、可附参考图。它可能先追问主题、必须文字、尺寸、风格。</p>
+<p>示例回复：时尚杂志封面、文字交给它写、比例 3:4、Vogue / Editorial 感觉——中英文排版与材质协调度惊喜。</p>
+<blockquote>
+<p>注意：Templates <strong>暂未进 Work 模式</strong>。</p>
+</blockquote>
+<h4>局部编辑：圈出来改，点一下加评论</h4>
+<p>打开成片可见：标注、评论、移除背景、擦除、调整尺寸。</p>
+<ul>
+<li>圈标题 → 输入替换文字（测试里故意用变体拼写 “VOUGE”，图会按提示保留）  </li>
+<li>在眼睛附近评论「加一副墨镜」→ 墨镜加上且前轮标题仍在  </li>
+</ul>
+<p><strong>多轮编辑的价值：</strong> 可以继续改下去，不用每次重抽一张；一致性解决了「改着改着前面效果全丢」的老痛点。</p>
+<h4>调整画幅：竖转横也能重排</h4>
+<p>把 3:4 竖版海报改成 16:9：人物缩小、画面展开、标题与左右文字重排，墨镜仍在。做多平台封面的人会特别省事。</p>
+<h4>分享：把提示词也带上</h4>
+<p>「分享提示模板」复制链接后，别人能看到图 + 提示词，并可添加自己的图试同一修改。提示词模板生意会受官方入口挤压，创作者则多了裂变通道。</p>
+<h3>3）速度更快，在哪里能用？</h3>
+<p>官方：相对 Images 2.0，生成延迟<strong>最多约降 50%</strong>。实测体感明显更快，连续改图时差别尤其大。</p>
+<p>覆盖：<strong>ChatGPT / ChatGPT Work / Codex</strong>，桌面、移动、网页滚动推出。</p>
+<p>API 双轨：</p>
 <table>
 <thead>
 <tr>
-<th>场景</th>
-<th>建议</th>
+<th>模型</th>
+<th>定位</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>日更 30 张封面</td>
-<td>Flare + 固定模板 prompt</td>
+<td><strong>GPT-Image-2.5 Flare</strong></td>
+<td>质量、编辑、速度的平衡</td>
 </tr>
 <tr>
-<td>电商主图终稿</td>
-<td>Sunburst 收口</td>
-</tr>
-<tr>
-<td>角色一致性多轮</td>
-<td>Sunburst + 参考图</td>
-</tr>
-<tr>
-<td>只要便宜试水</td>
-<td>先确认是否真·2.5，再谈单价</td>
+<td><strong>GPT-Image-2.5 Sunburst</strong></td>
+<td>更精细控制，生成更久</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2>路径 D｜国内高速镜像：网页免梯轻体验</h2>
-<p>适合：先体验对话与轻量生图，不想装一堆客户端。</p>
-<p>镜像导航：<br />
-https://trygpt.asia/list/#/home</p>
-<p><strong>建议</strong></p>
-<ul>
-<li>当「试用入口」，不当「唯一生产资料库」。  </li>
-<li>重要成片本地另存；别默认镜像会永久替你存图。  </li>
-<li>功能是否含 Sketch / Templates，看该镜像站自己的说明——多数网页镜像<strong>跟不上官方 App 的完整 Images 面板</strong>。</li>
-</ul>
-<p>GPT-6 Astra 国内渠道总览页（四种方式一页看完）：<br />
-https://xianyu110.github.io/GPT6/</p>
-<hr />
-<h2>一张图做决策</h2>
-<pre><code class="language-text">要 Sketch / Templates / 留言改？
-  └─ 是 → 路径 A 官方 ChatGPT（+ 必要时代充）
-  └─ 否 → 只要能稳定出图？
-        └─ 是，且要写代码+出图 → 路径 B 国内站套餐
-        └─ 是，且要批量/接产品 → 路径 C API
-        └─ 先随便试试 → 路径 D 镜像导航
-</code></pre>
-<p><img alt="2.0 vs 2.5 同题对比示意" src="https://upload.maynor1024.live/file/1788915107021_03-compare-image2.jpg" /></p>
-<p><img alt="同题 2.5 Sunburst 侧" src="https://upload.maynor1024.live/file/1788915115195_04-compare-sunburst.jpg" /></p>
-<p><em>测渠道时也建议「同 prompt 左右打」：比看广告词靠谱。</em></p>
-<hr />
-<h2>避坑清单（国内特供）</h2>
+<p>价格以 OpenAI 官方定价页为准：https://developers.openai.com/api/docs/pricing</p>
+<h3>4）实测踩坑</h3>
 <ol>
-<li><strong>别把 GPTimage2 自动当成 Images 2.5。</strong> 问清模型 id。  </li>
-<li><strong>第三方套餐不是官方订阅。</strong> 出问题找服务商，别刷 OpenAI 工单。  </li>
-<li><strong>代充只解决支付，不解决额度神话。</strong>  </li>
-<li><strong>密钥与账号分离：</strong> 工作号 / 测试号分开，避免一锅端。  </li>
-<li><strong>商用授权：</strong> 人脸、商标、客户物料，先过你自己的法务习惯。  </li>
-<li><strong>Work / 企业空间</strong> 功能可能和个人数不同步（例如 Templates 暂未进 Work）。</li>
+<li><strong>换晚礼服也可能被安全拦截</strong>（提示涉及欺诈/诈骗防范）——正常改图可能被误伤，风控体感更严。  </li>
+<li><strong>多轮对话里回头改旧图，容易改错对象</strong>——系统更偏向「最近一张图」；一会话交替多张图时要小心，或新开对话。  </li>
+<li><strong>单次变快了，但界面里仍难真正并发多张</strong>——连续测很多提示词还是得排队。</li>
 </ol>
+<h3>5）收尾判断</h3>
+<p>对公众号封面、插图、海报来说，2.5 已经能长期放进工作流：2.0 解决「愿意一直用它出图」，2.5 把后续琐碎修改接起来——人物要保留、标题要换、画幅要适配、改几次前面效果还在。</p>
+<p>还会出错（改动作的骑马照就不那么像），但重心已从「怕一动手全崩」转到「这张图该怎么设计、哪里还能改」。</p>
 <hr />
-<h2>和「玩法文」怎么搭配发</h2>
+<h2>三、和本仓库其它文档</h2>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./国内使用途径.md">国内使用途径.md</a></td>
+<td>四条路径精简版</td>
+</tr>
+<tr>
+<td><a href="./玩法教程.md">玩法教程.md</a></td>
+<td>8 个可抄玩法 + 提示词包</td>
+</tr>
+<tr>
+<td><a href="./配图链接.md">配图链接.md</a></td>
+<td>CDN 图床映射</td>
+</tr>
+</tbody>
+</table>
+<p>Pages：</p>
 <ul>
-<li>本篇：<strong>怎么进门</strong>（收藏向）  </li>
-<li>上一篇：<strong>进门后抄哪 8 个玩法</strong>（转化向）  </li>
-<li>需要完整产品能力（Sketch 等）→ 引导官方端  </li>
-<li>需要低门槛持续用 → 引导 Codex / MomoAI 套餐  </li>
-<li>需要开发接入 → 引导 TryAllAPI</li>
+<li>https://xianyu110.github.io/gptimage2.5/  </li>
+<li>https://xianyu110.github.io/gptimage2.5/china.html  </li>
 </ul>
-<p>玩法文标题参考：<em>别再赌首图了：ChatGPT Images 2.5 今晚就能抄的玩法</em></p>
 <hr />
-<h2>收尾</h2>
-<p>国内用 Images 2.5，本质不是找「神秘链接」，而是选对<strong>完整度 / 门槛 / 成本</strong>三角：</p>
-<blockquote>
-<p><strong>官方要完整，国内站要开工，API 要规模。</strong></p>
-</blockquote>
-<p>今晚最小动作：打开 https://xianyu110.github.io/GPT6/ ，四条渠道点一遍；再决定你是走官方，还是先用国内站把本周封面出完。</p>
+<h2>参考资料</h2>
+<ul>
+<li>原文：https://mp.weixin.qq.com/s/ah_zvKyPMZZkKZo7C3vMdQ  </li>
+<li>https://openai.com/index/introducing-chatgpt-images-2-5/  </li>
+<li>https://openai.com/index/introducing-chatgpt-images-2-0/  </li>
+<li>https://help.openai.com/en/articles/11084440-images-in-chatgpt  </li>
+<li>https://developers.openai.com/api/docs/pricing  </li>
+<li>GPT-6 Astra 国内指南：https://xianyu110.github.io/GPT6/  </li>
+<li>Codex 国内站：https://codex.maynorai.top/  </li>
+</ul>
 <hr />
 <p>我是 MaynorAI 团队，分享 AI 编程、AI SaaS 工具出海、一人团队搭建经验。</p>
-<ul>
-<li>GPT-6 Astra 国内使用指南：https://xianyu110.github.io/GPT6/  </li>
-<li>Awesome GPT-6 Astra 作品集：https://xianyu110.github.io/awesome-gpt-6-astra/  </li>
-<li>Codex 国内站：https://codex.maynorai.top/  </li>
-<li>可玩站集合：https://gpt-6-astra.cc/</li>
-</ul>
 <p>（第三方价格、模型上架以各站实时页面为准；Images 2.5 / Flare / Sunburst 滚动上线中。）</p>
-</article>
-<p class="footer">MaynorAI · <a href="https://github.com/xianyu110/gptimage2.5">xianyu110/gptimage2.5</a></p>
-</div>
+    </article>
+    <p class="footer">MaynorAI · <a href="https://github.com/xianyu110/gptimage2.5">gptimage2.5</a></p>
+  </div>
 </body>
 </html>

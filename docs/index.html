@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>别再赌首图了：ChatGPT Images 2.5 今晚就能抄的玩法</title>
-<meta name="description" content="ChatGPT Images 2.5 / GPT-Image-2.5 中文教程：Sketch、Templates、局部改图、Flare/Sunburst 与国内使用途径"/>
+<title>GPT Image 2.5 国内使用汇总</title>
+<meta name="description" content="GPT Image 2.5 / ChatGPT Images 2.5 国内使用汇总：官方、Codex 国内站、API、镜像四条路径 + 实测要点"/>
 <link rel="canonical" href="https://xianyu110.github.io/gptimage2.5/"/>
 <style>
 :root {
@@ -40,390 +40,239 @@ a { color: var(--accent); }
 img { max-width:100%; height:auto; border-radius:12px; display:block; margin:14px 0; border:1px solid var(--line); }
 blockquote {
   margin: 1rem 0; padding: 10px 14px; border-left: 3px solid var(--accent);
-  background: rgba(110,231,255,.06); color:#d5e6f5;
+  background: rgba(110,231,255,.06); color: #c9d7ea;
 }
-table { width:100%; border-collapse: collapse; font-size:0.95rem; margin: 1rem 0; }
-th, td { border:1px solid var(--line); padding:8px 10px; vertical-align:top; }
-th { background: rgba(110,231,255,.08); text-align:left; }
-code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:0.9em; }
+table { width:100%; border-collapse: collapse; margin: 1rem 0; font-size:0.95rem; }
+th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+th { background: rgba(110,231,255,.08); }
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+}
+code { background: rgba(0,0,0,.35); padding: 2px 6px; border-radius: 6px; }
 pre {
-  background:#0a1018; border:1px solid var(--line); border-radius:12px;
-  padding:12px 14px; overflow:auto;
+  background: rgba(0,0,0,.4); padding: 14px; border-radius: 12px; overflow-x:auto;
+  border:1px solid var(--line);
 }
-pre code { font-size:0.86rem; }
-em { color: var(--muted); }
-.footer { margin-top:22px; color:var(--muted); font-size:13px; text-align:center; }
+pre code { background: none; padding:0; }
+.footer { margin-top:28px; color:var(--muted); font-size:13px; text-align:center; }
 </style>
 </head>
 <body>
-<div class="wrap">
-
+  <div class="wrap">
     <nav class="nav">
-      <a href="./" class="active">玩法教程</a>
-      <a href="./china.html" class="">国内使用途径</a>
-      <a href="https://github.com/xianyu110/gptimage2.5" target="_blank" rel="noopener">GitHub</a>
+      <a href="./" class="active">国内使用汇总</a><a href="./playbook.html">玩法教程</a><a href="https://github.com/xianyu110/gptimage2.5" target="_blank" rel="noopener">GitHub</a>
     </nav>
-<article>
-<h1>别再赌首图了：ChatGPT Images 2.5 今晚就能抄的玩法</h1>
+    <article>
+<h1>GPT Image 2.5 国内使用汇总</h1>
 <blockquote>
-<p>2026-09-09 · MaynorAI<br />
-依据：OpenAI 官方博客 / Help Center / Release Notes（2026-09-08）</p>
+<p>主题：ChatGPT Images 2.5 / GPT-Image-2.5 怎么用、国内怎么进门<br />
+正文整理自公众号实测：<a href="https://mp.weixin.qq.com/s/ah_zvKyPMZZkKZo7C3vMdQ">ChatGPT Images 2.5 实测：AI 生图，开始变成设计工具了</a>（AI小范儿）<br />
+并补充国内访问路径（MaynorAI）<br />
+更新日期：2026-09-09</p>
 </blockquote>
-<p>先把结论放桌上：</p>
+<hr />
+<h2>先看结论</h2>
 <p><strong>Images 2.0 解决「能画」。Images 2.5 解决「能改、能迭代、能量产」。</strong></p>
-<p>2026 年 9 月 8 日，OpenAI 上线 ChatGPT Images 2.5：更锐、更好改、相对 2.0 <strong>延迟最多约降 50%</strong>。同步落地四个真正好用的东西——<strong>Sketch（手机草图）</strong>、<strong>Templates</strong>、<strong>图上留言改</strong>、<strong>Share a prompt</strong>。API 双轨：<strong>Flare</strong> 跑量，<strong>Sunburst</strong> 收口。</p>
-<p>额度官方写明<strong>不变</strong>。更快 ≠ 无限出图。红利在试错轮次，不在玄学咒语。</p>
-<p><img alt="OpenAI 宣布 ChatGPT Images 2.5" src="https://upload.maynor1024.live/file/1788915119447_06-openai-video-thumb.jpg" /></p>
-<p><em>官方首发画面：更快、更锐、更好改——今晚就值得打开 App 摸一手。</em></p>
-<hr />
-<h2>30 秒搞懂：2.5 vs 2.0，Flare · Sunburst</h2>
-<p>别被标题党揉成一团。四月的 <strong>Images 2.0 / gpt-image-2</strong>，和九月的 <strong>Images 2.5 / GPT-Image-2.5</strong>，不是一回事。</p>
+<p>2026 年 9 月 8 日，OpenAI 上线 ChatGPT Images 2.5：主体更稳、多轮编辑更可控，细节 / 复杂布局 / 速度一起抬；工具侧新增 <strong>Sketch 草图</strong>、<strong>创作模板</strong>、<strong>图片评论</strong>、<strong>提示词分享</strong>。</p>
+<p>对国内用户来说，真正卡点往往不是「会不会写 prompt」，而是：<strong>完整能力在官方端，低门槛入口在国内站 / API / 镜像，型号别混。</strong></p>
 <table>
 <thead>
 <tr>
-<th>名字</th>
-<th>怎么记</th>
+<th>你要什么</th>
+<th>优先走哪条</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Images 2.0（2026-04）</td>
-<td>上一代「能画」主力</td>
+<td>Sketch / Templates / 图上留言改（完整体验）</td>
+<td><strong>官方 ChatGPT</strong>（自备网络与付款）</td>
 </tr>
 <tr>
-<td>Images 2.5（2026-09-08）</td>
-<td>更快 + 更好改 + Sketch / Templates / 留言改</td>
+<td>不想折腾魔法与海外号，先能出图干活</td>
+<td><strong>Codex 国内站 / MomoAI 包月</strong></td>
 </tr>
 <tr>
-<td><strong>Flare</strong></td>
-<td>API 速度向，日更与批量默认选它</td>
+<td>批量出图、接自己的产品</td>
+<td><strong>API 聚合（Flare / Sunburst）</strong></td>
 </tr>
 <tr>
-<td><strong>Sunburst</strong></td>
-<td>API 精度向，终稿与难 prompt 再上它</td>
+<td>网页免梯轻体验</td>
+<td><strong>国内高速镜像</strong></td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>四月叫 2.0，九月叫 2.5；产品侧叫 Images，API 侧叫 Flare / Sunburst。</strong></p>
+<p>硬提醒：四月的 <strong>Images 2.0 / gpt-image-2</strong> ≠ 九月的 <strong>Images 2.5 / GPT-Image-2.5</strong>。国内站写的「GPTimage2」也不等于自动已切到 2.5——买之前问清模型名。</p>
 </blockquote>
 <hr />
-<h2>怎么打开（最短路径）</h2>
-<p>三条够用：</p>
+<h2>一、国内四条进门路径</h2>
+<h3>1）官方 ChatGPT：体验最全</h3>
+<p>适合：要 <code>@Sketch</code>、Templates、Comment / Select 局部改、Share Prompt 全套。</p>
 <ol>
-<li><strong>对话直出</strong>：说「用 Images 2.5 生成一张……」，或侧边栏 <strong>Images → Create Image</strong>。</li>
-<li><strong>上传再改</strong>：丢产品图 / 自拍，一次只改 1–3 个变量。</li>
-<li><strong>手机 Sketch</strong>：输入框 <code>@</code> → 选 <strong>Sketch</strong> → 先画再写描述。</li>
+<li>准备可访问 ChatGPT 的网络环境  </li>
+<li>打开 <a href="https://chatgpt.com">chatgpt.com</a>，更新手机 App  </li>
+<li>对话生图，或侧边栏 <strong>Images → Create Image</strong>  </li>
+<li>手机 / 网页输入框 <code>@</code> → <strong>Sketch</strong>  </li>
+<li><strong>Images → Templates</strong> 起海报；全屏图可标注 / 评论改</li>
 </ol>
-<p><strong>Work 模式</strong>：生成和编辑有，<strong>Templates 暂未进 Work</strong>，也没有 Snake 彩蛋。模板流水线请回普通 Images 面板。</p>
-<p>短视频 / 小红书竖图：编辑器里锁 <strong>Aspect ratio</strong>，或提示词写死 <code>9:16</code> / <code>3:4</code> / <code>1:1</code>，别生成后再硬裁。</p>
-<p>Images 2.5 覆盖 <strong>Web / 手机 / 桌面 / Codex</strong>；Codex 里同样可生成与编辑图像。Plus / Pro / Business 仍可开 <strong>Images with thinking</strong>（先想再画），与 2.5 不互斥。</p>
-<p>复杂请求仍可能要等——「最多约 50% 更低」不是「永远秒出」。</p>
-<hr />
-<h2>核心玩法</h2>
-<p>每个玩法同一套路：<strong>配图 + 怎么做 + 可抄提示词</strong>。图对题，不塞新闻卡。</p>
-<h3>玩法 01｜Sketch：画三笔，胜过写八百字</h3>
-<p>手机专属。官方逻辑很实在——有时候解释想法最清楚的方式，就是画出来。</p>
-<p><img alt="手机 ChatGPT 打开 @Sketch 手绘" src="https://upload.maynor1024.live/file/1788915116606_sketch-demo-thumb-2.jpg" /></p>
-<p><em>输入框打 <code>@</code> 选 Sketch：先画轮廓，再补风格。</em></p>
-<p><img alt="Sketch 成片演示缩略" src="https://upload.maynor1024.live/file/1788915117384_07-sketch-demo-thumb.jpg" /></p>
-<p><em>草图 → 成片的产品叙事：构图交给手，美学交给模型。</em></p>
-<p><img alt="用 @Sketch 给模型视觉参考" src="https://upload.maynor1024.live/file/1788915136162_russell-sketch-thumb.jpg" /></p>
-<p><em>别只靠文字玄学——草图就是空间 brief。英文圈也在刷同一套叙事。</em></p>
-<p><strong>怎么做</strong></p>
-<ol>
-<li>打开 ChatGPT App  </li>
-<li><code>@</code> → <strong>Sketch</strong>  </li>
-<li>画主轮廓（有颜色、橡皮、撤销）  </li>
-<li>打勾，再写主体 / 材质 / 光线 / 比例  </li>
-<li>发送</li>
-</ol>
-<p><strong>可抄提示词</strong></p>
-<pre><code class="language-text">根据我的草图生成成片：
-- 严格遵守草图的构图与透视
-- 主体：【产品 / 人物 / 室内】
-- 风格：【写实摄影 / 日系插画 / 3D 渲染】
-- 光影：【窗光 / 影棚柔光 / 霓虹夜景】
-- 不要额外添加草图里没有的主体
-- 宽高比：【9:16 / 1:1 / 16:9】
-</code></pre>
-<p>室内一键：</p>
-<pre><code class="language-text">把这张平面潦草布局变成室内效果图：
-保留墙体分隔与家具大致位置；
-风格：现代日系原木；光线：下午侧窗光；
-材质：橡木地板、亚麻窗帘；镜头：24mm，无人。
-</code></pre>
-<p>适合：包装线框、App UI、分镜火柴人、房间布局。<br />
-不适合：超密集小字海报（先 Templates）、法律级工程图。</p>
-<hr />
-<h3>玩法 02｜参考图换装：改衣服，别换狗</h3>
-<p>2.5 官方反复强调：<strong>参考图主体换场换装，仍更像「同一个」</strong>。社区拿 Photoshop 比喻，不是图层来了，是修改心理模型变了——从重抽，变成修订。</p>
-<p><img alt="官方样张：参考原图里的狗" src="https://upload.maynor1024.live/file/1788915104642_01-chatgpt-official-a.jpg" /></p>
-<p><em>先锁身份，再谈创意——官方样张的「真人感」参考。</em></p>
-<p><img alt="同一只狗穿上 STUNTMAN 战衣" src="https://upload.maynor1024.live/file/1788915106484_02-chatgpt-official-b.jpg" /></p>
-<p><em>同构图换装：衣服合身、胸前文字可读、姿势尽量不动。</em></p>
-<p><strong>怎么做</strong></p>
-<ol>
-<li>上传 1–3 张清晰参考图  </li>
-<li>首句写死「身份锁定」  </li>
-<li>只改服装 / 场景 / 道具，一轮不超过 3 个变量  </li>
-<li>漂了就回退，别在烂图上继续叠</li>
-</ol>
-<p><strong>可抄话术</strong></p>
-<pre><code class="language-text">身份锁定：与参考图为同一主体，五官/毛色/体态比例不变。
-只改：服装→复古特技服 + 头盔，胸前清晰英文「STUNTMAN」；
-场景与姿势尽量保持。
-禁止：换脸、整容感、另造一个主体、过度磨皮。
-</code></pre>
-<p>人像把「主体」换成「同一人」，服装换成你的 brief 即可。</p>
-<hr />
-<h3>玩法 03｜Templates：同一骨架，只换标题</h3>
-<p>多数营销图是「骨架不变，文案变量」。Templates 钉死骨架，你填投放简报，而不是每次从零写 prompt。</p>
-<p><img alt="创作者工作台：模板与迭代" src="https://upload.maynor1024.live/file/1788916225428_play-rrweb3.jpg" /></p>
-<p><em>从想法到成片：模板起稿、可继续 Edit——日更封面党友好。</em></p>
-<p><strong>怎么做</strong></p>
-<ol>
-<li><strong>Images → Templates</strong>  </li>
-<li>选海报 / Merch / 产品图等  </li>
-<li>追问时答清：受众、场合、情绪、必须出现的字  </li>
-<li>有上传口就塞品牌色 / 人像 / 产品图  </li>
-<li>生成后对话改，或进编辑器精修</li>
-</ol>
-<blockquote>
-<p>Templates <strong>还没进 Work</strong>。</p>
-</blockquote>
-<p><strong>可抄补丁</strong></p>
-<pre><code class="language-text">用途：AI 工具课招生海报
-标题：ChatGPT Images 2.5 实战营
-副标题：Sketch 到成片，7 天做出可售卖视觉包
-风格：高对比赛博蓝 + 黑，大标题可读
-必须保留：右下角极简 logo 占位
-禁止：花哨贴纸、过多装饰线
-比例：3:4
-</code></pre>
-<p>一天 30 张封面：固定品牌色与字体描述，<strong>只改标题变量</strong>，再用 Share Prompt 把母版存进团队文档。</p>
-<hr />
-<h3>玩法 04｜图上留言改：改哪里，就尽量只动哪里</h3>
-<p>如果说 2.5 有一个值得刷屏的卖点，不是「首图更美 10%」，而是：</p>
-<blockquote>
-<p><strong>改你想改的，不动其他细节。</strong></p>
-</blockquote>
-<p>手机全屏打开图：<strong>Edit</strong> 整体描述，<strong>Select</strong> 刷局部，<strong>Comment</strong> 点位置写「这里改成……」。</p>
-<p><img alt="中文解读：局部编辑更听话" src="https://upload.maynor1024.live/file/1788916234096_play-xifen-1.jpg" /></p>
-<p><em>「让它改哪里，就尽量只改哪里」——打的就是旧痛点：改个 logo，脸也一起漂。</em></p>
-<p><strong>怎么做</strong></p>
-<ol>
-<li>点开成片 → Comment / Select  </li>
-<li>话术写清「只改标注区」  </li>
-<li>一轮最多 1–3 个变量  </li>
-<li>Undo / Redo 当历史记录</li>
-</ol>
-<p><strong>可抄话术</strong></p>
-<pre><code class="language-text">只改我标注的区域：
-1) 把包上的 logo 换成白色极简「MAYNOR」
-2) 不要改人物脸、发型、姿势、背景
-3) 保持原来的光影方向和色温
-</code></pre>
-<pre><code class="language-text">同一张图继续，不要重新构图。
-只提高皮肤真实毛孔，去掉塑料感；背景虚化略加强。
-</code></pre>
-<p>多轮顺序：构图 → 服装道具 → 光影色彩 → 文字 logo →（可选）透明底。<br />
-把每次编辑当成「最多 3 个变量」的预算——超了就拆下一轮。这是纪律，不是模型限制。</p>
-<p>连续四轮修同一处还越修越脏？另开新枝，止损比硬刚值钱。</p>
-<p>官方提醒：选区<strong>不完全精确</strong>，复杂结构要小步多轮。</p>
-<hr />
-<h3>玩法 05｜不可能 Prompt：汉堡 + 时钟压测</h3>
-<p>测评最容易上热的体裁：<strong>同 prompt 左右对打</strong>。复杂物理、可读文字、模拟时钟——老模型爱翻车的地方。</p>
-<p><img alt="压测样张 A：汉堡、红酒与挂钟" src="https://upload.maynor1024.live/file/1788916225556_play-clock-a.jpg" /></p>
-<p><em>时钟数字顺序、指针、食物材质同框——典型难 prompt。</em></p>
-<p><img alt="压测样张 B：另一构图的时钟压力测试" src="https://upload.maynor1024.live/file/1788916222968_play-clock-b.jpg" /></p>
-<p><em>换构图再压：招牌字 + 闹钟 + 餐食，看细节是否一起稳住。</em></p>
-<p><strong>怎么做</strong></p>
-<ol>
-<li>锁死比例，标明模型 / 档位  </li>
-<li>ChatGPT 2.5 出一张；有 API 再打 Flare / Sunburst  </li>
-<li>发内容时诚实标参数，别偷偷降档打假胜利</li>
-</ol>
-<p><strong>可抄压测词</strong></p>
-<pre><code class="language-text">写实餐饮静物，木质桌面：
-前景一份多层芝士汉堡（芝士拉丝可见），旁放一大杯红酒；
-背景挂一只模拟挂钟，数字 1–12 正确、指针指向约 3:32；
-浅景深，暖光侧打，玻璃高光真实，文字清晰无误。
-禁止：数字乱序、融化成糊的指针、塑料感食物。
-</code></pre>
-<hr />
-<h3>玩法 06｜写实到发抖：社交感人像</h3>
-<p>2.5 更吃材质与光影。别堆十个艺术家名字：写清<strong>焦距、机位、光型、介质</strong>，主风格只选 1 个。</p>
-<p><img alt="酒窖写实人像" src="https://upload.maynor1024.live/file/1788916223330_play-photoreal.jpg" /></p>
-<p><em>皮衣纹理、酒杯高光、发丝与肤色——用光影和材质描述压「AI 塑料感」。</em></p>
-<p><strong>怎么做</strong></p>
-<ol>
-<li>先定场景与情绪，再写镜头  </li>
-<li>明确「保留毛孔 / 不要美颜磨皮」  </li>
-<li>需要文字就单独一轮只改字</li>
-</ol>
-<p><strong>可抄提示词</strong></p>
-<pre><code class="language-text">超写实社交感人像，浅景深：
-主体：长发女性，深色皮衣，手托下巴，表情克制俏皮；
-场景：昏暗酒窖餐厅，背后酒架暖光；
-前景：红酒杯与水杯虚化高光；
-镜头：50mm，侧前方暖光 + 轻微轮廓光；
-皮肤保留毛孔，禁止塑料磨皮；比例 3:4。
-</code></pre>
-<hr />
-<h3>玩法 07｜2.0 vs 2.5：同题左右对打</h3>
-<p>别只说「更锐」。同一条难 prompt 左右贴上，读者自己站队。社区常用 GPT Image 2 High 4K vs 2.5 Sunburst High 4K——复测时写清平台与档位。</p>
-<p><img alt="对比左：GPT Image 2" src="https://upload.maynor1024.live/file/1788915107021_03-compare-image2.jpg" /></p>
-<p><em>同题左：雨夜钟表店、人机协作、玻璃字——看文字与反射。</em></p>
-<p><img alt="对比右：GPT Image 2.5 Sunburst" src="https://upload.maynor1024.live/file/1788915115195_04-compare-sunburst.jpg" /></p>
-<p><em>同题右：细节、窗字、雨滴与猫——左右并排比写一千字参数有用。</em></p>
-<p><strong>怎么做</strong></p>
-<ol>
-<li>锁死 prompt、比例、参考图（如有）  </li>
-<li>左 2.0 / 右 2.5（或 Flare / Sunburst）  </li>
-<li>标题直接写：「同 prompt，你站哪边」</li>
-</ol>
-<pre><code class="language-text">透过雨夜橱窗看修表店：女表匠与黄铜小机器人共同修理机芯；
-玻璃金字「L'ATELIER DU TEMPS」可读；店内暖台灯，室外冷色车灯虚化；
-架上橘猫睡觉；电影感写实，细节锐利。
-</code></pre>
-<hr />
-<h3>玩法 08｜Sunburst 收口 + Prompt 分享</h3>
-<p>日更别上来就烧 Sunburst。分流：</p>
+<p>付费现实：Free 也能生图但额度紧；重度改图常见 Plus / Pro。国内卡过不去时可用代充通道（第三方，付款前核对归属）：https://chongzhi.trygpt.asia/</p>
+<h3>2）Codex 国内站 / MomoAI：低门槛先跑通</h3>
+<p>适合：不想魔法、不想海外手机号，写代码 + 出图同一条链路。</p>
 <ul>
-<li><strong>Flare</strong>：构图探索、批量封面、产品默认链路  </li>
-<li><strong>Sunburst</strong>：广告终稿、复杂文字、苛刻一致性</li>
+<li>国内站：https://momoai.asia/login  </li>
+<li>备用：https://codex.trygpt.asia/login  </li>
+<li>套餐页：https://momoai.asia/home  </li>
+<li>购买：https://momoai.dadoudou117.com/  </li>
+<li>教程：https://news.maynorai.asia/blog/codex-china-gpt-5-6-launch  </li>
+<li>介绍页：https://codex.maynorai.top/</li>
 </ul>
-<p><img alt="Sunburst 向精修：长句 T 恤仍清晰" src="https://upload.maynor1024.live/file/1788916230604_play-sunburst-art.jpg" /></p>
-<p><em>复杂场景 + 衣服褶皱上的长句仍可读——这种终稿感更适合 Sunburst 收口。</em></p>
-<p>手机：<strong>Share → Prompt template → Copy link</strong>。适合团队规范、小红书可复刻模板、给客户交「可改参数的提示词包」。分享前抠掉机密与人脸敏感信息。</p>
-<p><strong>可抄分流话术</strong></p>
-<pre><code class="language-text">方案 A（快）：Flare 出 8 张概念，选 2 张精修 → 社媒排期
-方案 B（稳）：Flare 定构图 + Sunburst 出终稿 → 详情页主视觉
-方案 C（狠）：Sketch 定结构 → Templates 起稿 → Comment 三轮 → Sunburst 收口
+<p>这是<strong>第三方中转，不是 OpenAI 官方订阅</strong>。套餐内常见 <strong>GPTimage2</strong> 能力——是否已上 Images 2.5 Flare/Sunburst，以站内模型列表为准。问客服可直接问：</p>
+<pre><code class="language-text">1）现在图像是 gpt-image-2 还是 gpt-image-2.5？
+2）有没有 Flare / Sunburst？
+3）额度按张还是套餐共享？
 </code></pre>
-<hr />
-<h2>提示词精选（少而精）</h2>
-<p>结构公式够用就行：</p>
-<pre><code class="language-text">[主体] + [动作/情绪] + [环境] + [镜头] + [光线] + [材质] + [必须保留] + [禁止] + [比例]
-</code></pre>
-<p><strong>1｜电商白底主图</strong></p>
-<pre><code class="language-text">白底电商主图，1:1：
-产品居中，完整显示瓶身/标签；
-柔光棚拍，轻微投影；
-标签文字清晰无误；
-不要道具堆砌，不要手模抢戏。
-</code></pre>
-<p><strong>2｜小红书竖版封面</strong></p>
-<pre><code class="language-text">小红书竖版封面 3:4：
-大标题中文「」字号巨大、缩略图仍可读；
-背景【纯色 / 生活场景虚化】；
-主体约占画面 60%；
-风格明亮高对比，少文字；
-右下角留 10% 安全区给平台控件。
-</code></pre>
-<p><strong>3｜透明背景贴纸</strong></p>
-<pre><code class="language-text">生成角色贴纸，背景透明：
-线条干净，描边统一；
-表情：【】；
-适合微信表情或 Merch 印花；
-不要阴影接地，不要实底。
-</code></pre>
-<p><strong>4｜身份锁定换场景</strong></p>
-<pre><code class="language-text">身份锁定：与参考图为同一人，五官比例、肤色、发型、年龄感不变。
-只改：服装→【】；场景→【】；表情可微调为【】。
-保持：原有脸型与痣/特征点。
-禁止：换脸、整容感、过度磨皮、另造一个人。
-</code></pre>
-<p><strong>5｜编辑短句（往往比长 prompt 更香）</strong></p>
+<h3>3）API 聚合：批量与产品接入</h3>
+<p>适合：工具站、自动出图、批量封面。</p>
 <ul>
-<li>「只改……，其它像素级保持」  </li>
-<li>「同一张图继续，不要重新构图」  </li>
-<li>「文字改成中文『』，字距紧凑，不要错字」  </li>
-<li>「去掉多余手指，修复手部结构」  </li>
-<li>「logo 边缘更锐，不要发虚」</li>
+<li>TryAllAPI：https://tryallapi.com/</li>
 </ul>
-<p>负面约束写<strong>可验证的禁止项</strong>，别堆一百个 <code>low quality</code>。</p>
-<p><img alt="材质混搭字标 Images 2.5" src="https://upload.maynor1024.live/file/1788916229950_play-xifen-2.jpg" /></p>
-<p><em>大理石、棒球、笔触、热气球——材质写具体，比空喊「高质量」有用。</em></p>
+<p>日更 / 草稿 → <strong>Flare</strong>；终稿 / 复杂文字 → <strong>Sunburst</strong>。2.5 刚发，有的站会先挂名后接通——先打 1 张样张再批量。</p>
+<h3>4）国内高速镜像：轻试用</h3>
+<ul>
+<li>镜像导航：https://trygpt.asia/list/#/home  </li>
+<li>渠道总览：https://xianyu110.github.io/GPT6/</li>
+</ul>
+<p>当试用入口，不当唯一生产资料库；Sketch / Templates 多数网页镜像跟不上官方 App。</p>
+<h3>一张图做决策</h3>
+<pre><code class="language-text">要 Sketch / Templates / 留言改？
+  └─ 是 → 官方 ChatGPT（+ 必要时代充）
+  └─ 否 → 只要能稳定出图？
+        └─ 写代码+出图 → 国内站套餐
+        └─ 批量/接产品 → API
+        └─ 先随便试试 → 镜像导航
+</code></pre>
 <hr />
-<h2>Flare vs Sunburst：怎么选</h2>
-<p><img alt="Flare 速度向 vs Sunburst 精度向" src="https://upload.maynor1024.live/file/1788916228706_play-flare-sunburst-jp.jpg" /></p>
-<p><em>想快速迭代用 Flare；要高精度收口用 Sunburst。</em></p>
+<h2>二、2.5 实测要点（整理自 AI小范儿）</h2>
+<p>上周 GPT-6 Astra 刚炸完，ChatGPT 图片又更新到 <strong>Images 2.5</strong>。上一代 Images 2.0 是 2026-04-21：更懂现实世界、更好执行指令、密集文字与 Thinking 模式。很多创作者从那时起就把公众号封面 / 插图交给 GPT Image 2。</p>
+<p>2.5 在 2.0 基础上重点加强：</p>
+<ul>
+<li><strong>主体一致性</strong>与<strong>多轮编辑</strong>  </li>
+<li>细节、复杂布局、生成速度  </li>
+<li>工具：Sketch、模板、图片评论、提示词分享  </li>
+</ul>
+<p>最关心的两件事：<strong>照片改完还像不像原来的人</strong>，以及这些设计 / 修图功能好不好用。</p>
+<h3>1）模型升级：主体更稳，修改更可控</h3>
+<h4>换衣服、换背景，再换发型</h4>
+<p>给一张参考照片，只说：</p>
+<blockquote>
+<p>把服装换成运动装。</p>
+</blockquote>
+<p>结果：衣服裤子换了，鞋子袜子也配上；运动服和袜子甚至补出耐克标志（未指定品牌）。脸的观感仍接近原人。</p>
+<p>继续：背景换成上海城市街头，再改发型发色——整体形象保留满意；但姿态和背景细节仍会跟着动，<strong>还不能说「除指定处完全不动」</strong>。</p>
+<h4>用自己的头像做地狱测试</h4>
+<p>原图骑马、马腿没拍全。目标：补全马下半身并跑起来，同时尽量保留本人。脸放大后几乎看不出明显变化。</p>
+<p>边界出现在：改成双手握缰绳 + 换黄毛。原图手和墨镜挡了一部分脸，动作一改就要「脑补」未见部分，相似度会掉。</p>
+<p><strong>经验：</strong> 改自己的照片尤其动脸和姿态时，尽量给清楚、遮挡少的参考图。</p>
+<p>官方还有三张人像合成一张聚会合照的演示，可对照主体保留能力。</p>
+<h3>2）创作工具：从草图到修图、分享</h3>
+<h4>Sketch：先画草图再成片</h4>
+<p>输入框 <code>@Sketch</code> 开画布：调笔触、颜色、文字形状、橡皮。</p>
+<p>随手画小人 → 要求更精致插画：头发、裙子、笑脸、颜色纹理都会补上。<strong>说不清形状时，直接画给它看。</strong></p>
+<h4>Templates：海报起稿</h4>
+<p>选海报模板，提示词自动进输入框，可改、可附参考图。它可能先追问主题、必须文字、尺寸、风格。</p>
+<p>示例回复：时尚杂志封面、文字交给它写、比例 3:4、Vogue / Editorial 感觉——中英文排版与材质协调度惊喜。</p>
+<blockquote>
+<p>注意：Templates <strong>暂未进 Work 模式</strong>。</p>
+</blockquote>
+<h4>局部编辑：圈出来改，点一下加评论</h4>
+<p>打开成片可见：标注、评论、移除背景、擦除、调整尺寸。</p>
+<ul>
+<li>圈标题 → 输入替换文字（测试里故意用变体拼写 “VOUGE”，图会按提示保留）  </li>
+<li>在眼睛附近评论「加一副墨镜」→ 墨镜加上且前轮标题仍在  </li>
+</ul>
+<p><strong>多轮编辑的价值：</strong> 可以继续改下去，不用每次重抽一张；一致性解决了「改着改着前面效果全丢」的老痛点。</p>
+<h4>调整画幅：竖转横也能重排</h4>
+<p>把 3:4 竖版海报改成 16:9：人物缩小、画面展开、标题与左右文字重排，墨镜仍在。做多平台封面的人会特别省事。</p>
+<h4>分享：把提示词也带上</h4>
+<p>「分享提示模板」复制链接后，别人能看到图 + 提示词，并可添加自己的图试同一修改。提示词模板生意会受官方入口挤压，创作者则多了裂变通道。</p>
+<h3>3）速度更快，在哪里能用？</h3>
+<p>官方：相对 Images 2.0，生成延迟<strong>最多约降 50%</strong>。实测体感明显更快，连续改图时差别尤其大。</p>
+<p>覆盖：<strong>ChatGPT / ChatGPT Work / Codex</strong>，桌面、移动、网页滚动推出。</p>
+<p>API 双轨：</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th><strong>Flare</strong></th>
-<th><strong>Sunburst</strong></th>
+<th>模型</th>
+<th>定位</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>定位</td>
-<td>速度 / 综合</td>
-<td>精度 / 难 prompt</td>
+<td><strong>GPT-Image-2.5 Flare</strong></td>
+<td>质量、编辑、速度的平衡</td>
 </tr>
 <tr>
-<td>适合</td>
-<td>批量、日更、高并发、草稿</td>
-<td>广告终稿、复杂文字、角色一致性</td>
-</tr>
-<tr>
-<td>代价</td>
-<td>更快</td>
-<td>生成更久</td>
-</tr>
-<tr>
-<td>口诀</td>
-<td>日更主力</td>
-<td>终稿精修</td>
+<td><strong>GPT-Image-2.5 Sunburst</strong></td>
+<td>更精细控制，生成更久</td>
 </tr>
 </tbody>
 </table>
-<p>社区提到 <code>xhigh</code> / <code>max</code> 等档——<strong>以你账号 API 文档当时可见枚举为准</strong>；第三方站可能先挂名后补能力。</p>
-<p>实操：Flare 先出 4 张 → 挑一张再 Sunburst。产品默认 Flare，后台「精修」走 Sunburst，最省钱也最诚实。</p>
+<p>价格以 OpenAI 官方定价页为准：https://developers.openai.com/api/docs/pricing</p>
+<h3>4）实测踩坑</h3>
+<ol>
+<li><strong>换晚礼服也可能被安全拦截</strong>（提示涉及欺诈/诈骗防范）——正常改图可能被误伤，风控体感更严。  </li>
+<li><strong>多轮对话里回头改旧图，容易改错对象</strong>——系统更偏向「最近一张图」；一会话交替多张图时要小心，或新开对话。  </li>
+<li><strong>单次变快了，但界面里仍难真正并发多张</strong>——连续测很多提示词还是得排队。</li>
+</ol>
+<h3>5）收尾判断</h3>
+<p>对公众号封面、插图、海报来说，2.5 已经能长期放进工作流：2.0 解决「愿意一直用它出图」，2.5 把后续琐碎修改接起来——人物要保留、标题要换、画幅要适配、改几次前面效果还在。</p>
+<p>还会出错（改动作的骑马照就不那么像），但重心已从「怕一动手全崩」转到「这张图该怎么设计、哪里还能改」。</p>
 <hr />
-<h2>避坑 FAQ（短）</h2>
-<p><strong>Q：为什么我没有 Sketch？</strong><br />
-滚动发布。确认 App 已更新；Sketch 在<strong>手机输入框 @</strong>，网页别硬找画板。</p>
-<p><strong>Q：Work 里找不到 Templates？</strong><br />
-正常。官方：Templates are not yet available in Work mode。</p>
-<p><strong>Q：额度会因 2.5 变多吗？</strong><br />
-官方：existing image-generation limits are unchanged。</p>
-<p><strong>Q：选区改完还是动到旁边？</strong><br />
-选区不完全精确。改小一点、多轮、写「只改标注区」。</p>
-<p><strong>Q：还能用 DALL·E GPT 吗？</strong><br />
-不能，已退役。用 ChatGPT Images。</p>
-<p><strong>Q：第三方显示 2.5，图质一般？</strong><br />
-可能挂名或档位不同。同 prompt 对照官方 ChatGPT。</p>
-<p><strong>Q：生成还是慢？</strong><br />
-复杂提示、Thinking、Sunburst、高峰期都会变慢。「最多约 50%」≠「永远快一半」。</p>
-<p><strong>Q：Codex 里能用吗？</strong><br />
-能。官方写明覆盖 Codex；Help Center 亦说明可在 Codex 生成与编辑图像。</p>
-<p><strong>Q：怎么删 Images 里的图？</strong><br />
-删除<strong>生成该图的那条对话</strong>（Web 标题 <code>•••</code> → Delete；手机长按对话标题 → Delete）。</p>
-<p>再钉四条：模型名别混（2.0 vs 2.5）；一次别塞 8 个互斥修改；商用人脸/商标先过授权；Work 无 Snake。</p>
-<hr />
-<h2>收尾</h2>
-<p>真正的红利不是「首图更美 10%」，而是：</p>
-<blockquote>
-<p><strong>同一条生产线上，试错成本腰斩。</strong></p>
-</blockquote>
-<p>六件套：Sketch 定结构，Templates 起稿，Comment 精修，Prompt Share 裂变，Flare 跑量，Sunburst 收口。</p>
-<p>今晚最小行动：打开手机 ChatGPT，<code>@</code> → Sketch，画一个歪杯子，写「变成陶瓷产品棚拍，白底，标签写 MAYNOR」。五分钟后你就知道——2.5 的进步是手感，不是广告词。</p>
-<hr />
-<p>我是 MaynorAI 团队，分享 AI 编程、AI SaaS 工具出海、一人团队搭建经验。能落地的教程，能上线的工具；Images 2.5 这类立刻提效的更新，优先整理成可复制工作流，而不是新闻搬运。</p>
+<h2>三、和本仓库其它文档</h2>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./国内使用途径.md">国内使用途径.md</a></td>
+<td>四条路径精简版</td>
+</tr>
+<tr>
+<td><a href="./玩法教程.md">玩法教程.md</a></td>
+<td>8 个可抄玩法 + 提示词包</td>
+</tr>
+<tr>
+<td><a href="./配图链接.md">配图链接.md</a></td>
+<td>CDN 图床映射</td>
+</tr>
+</tbody>
+</table>
+<p>Pages：</p>
 <ul>
-<li>GPT-6 Astra 国内使用指南：https://xianyu110.github.io/GPT6/  </li>
-<li>Awesome GPT-6 Astra 作品集：https://xianyu110.github.io/awesome-gpt-6-astra/  </li>
+<li>https://xianyu110.github.io/gptimage2.5/  </li>
+<li>https://xianyu110.github.io/gptimage2.5/china.html  </li>
+</ul>
+<hr />
+<h2>参考资料</h2>
+<ul>
+<li>原文：https://mp.weixin.qq.com/s/ah_zvKyPMZZkKZo7C3vMdQ  </li>
+<li>https://openai.com/index/introducing-chatgpt-images-2-5/  </li>
+<li>https://openai.com/index/introducing-chatgpt-images-2-0/  </li>
+<li>https://help.openai.com/en/articles/11084440-images-in-chatgpt  </li>
+<li>https://developers.openai.com/api/docs/pricing  </li>
+<li>GPT-6 Astra 国内指南：https://xianyu110.github.io/GPT6/  </li>
 <li>Codex 国内站：https://codex.maynorai.top/  </li>
-<li>可玩站集合：https://gpt-6-astra.cc/  </li>
 </ul>
-<p>（模型 id / 定价 / Templates 是否进 Work，以 OpenAI 实时文档为准。）</p>
-<p>官方入口：<a href="https://openai.com/index/introducing-chatgpt-images-2-5/">Introducing ChatGPT Images 2.5</a> · <a href="https://help.openai.com/en/articles/11084440-images-in-chatgpt">Images in ChatGPT</a> · <a href="https://x.com/OpenAI/status/2097394956457623964">OpenAI 公告帖</a></p>
-</article>
-<p class="footer">MaynorAI · <a href="https://github.com/xianyu110/gptimage2.5">xianyu110/gptimage2.5</a></p>
-</div>
+<hr />
+<p>我是 MaynorAI 团队，分享 AI 编程、AI SaaS 工具出海、一人团队搭建经验。</p>
+<p>（第三方价格、模型上架以各站实时页面为准；Images 2.5 / Flare / Sunburst 滚动上线中。）</p>
+    </article>
+    <p class="footer">MaynorAI · <a href="https://github.com/xianyu110/gptimage2.5">gptimage2.5</a></p>
+  </div>
 </body>
 </html>
