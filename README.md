@@ -15,6 +15,7 @@
 ## 目录
 
 - [先看结论：Images 2.5 国内怎么选](#先看结论images-25-国内怎么选)
+- [官方怎么用（Image Prompting）](#官方怎么用image-prompting)
 - [一、国内访问路径：官方 / 国内站 / API / 镜像](#一国内访问路径官方--国内站--api--镜像)
 - [二、ChatGPT Images 2.5 多轮编辑实测](#二chatgpt-images-25-多轮编辑实测整理自-ai小范儿)
 - [三、和本仓库其它文档](#三和本仓库其它文档)
@@ -94,6 +95,32 @@
 ![GPT-Image-2.5 Flare 与 Sunburst 双轨模型示意](https://upload.maynor1024.live/file/1788915127073_moha-flare-sunburst.jpg)
 
 *图：Flare 与 Sunburst 双轨示意*
+
+## 官方怎么用（Image Prompting）
+
+OpenAI 官方 [Image prompting](https://developers.openai.com/api/docs/guides/image-prompting) 的浓缩版（先选型，再写约束）：
+
+**选型**
+
+- **Flare** = 速度（质量 ≈ Image 2）；**Sunburst** = 质量（优于 Image 2）。
+- Image 2 工作流已够用 → 先试 Flare 降延迟。
+- 复杂案 Image 2 不够 → 先 Sunburst 证质量，再同 prompt 试 Flare。
+- **先选模型，再调 `quality`**；不够抬档，达标再降；`xhigh`/`max` 仅必要时。
+
+**写 prompt（8 条心法）**
+
+1. 用途 + 主体 + 构图/画幅 + 约束；复杂就分段。
+2. 格式求可维护（短句/段落/JSON/标签均可）。
+3. 写可见细节（材质、光、色、媒介）；写实要明示。
+4. 人物：取景、视线、与物体互动。
+5. 精确文字放引号 + 位置/字体；禁多余字。
+6. 改图：只改 X + must-stay；写清排除项。
+7. 参考图按序号分工（主体/风格/服装/背景）。
+8. 每轮只改一件；漂移就重申；像素级不变 → 自己合成。
+
+**验收**：文字、身份/产品、改图是否局部、透明是否真 alpha。
+
+姐妹仓库中文摘要：[官方提示与选型 playbook](https://xianyu110.github.io/awesome-gpt-image2.5/docs/playbooks/official-image-prompting.md) · [GitHub](https://github.com/xianyu110/awesome-gpt-image2.5/blob/main/docs/playbooks/official-image-prompting.md)
 
 ### 4）国内高速镜像：轻试用
 
