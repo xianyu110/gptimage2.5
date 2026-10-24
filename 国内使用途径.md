@@ -34,7 +34,7 @@
 | 你要什么 | 优先走哪条 |
 | --- | --- |
 | Sketch / Templates / 图上留言改（完整体验） | **[官方 ChatGPT](https://chatgpt.com)**（自备网络与付款；代充可用 [chongzhi.trygpt.asia](https://chongzhi.trygpt.asia/)） |
-| 不想折腾魔法与海外号，先能出图干活 | **[Codex 国内站 / MomoAI](https://momoai.asia/login)**（备用 [codex.trygpt.asia](https://codex.trygpt.asia/login)；购买 [momoai.dadoudou117.com](https://momoai.dadoudou117.com/)） |
+| 不想折腾魔法与海外号，先能出图干活 | **[Codex 国内站 / MomoAI](https://momoai.asia/login)**（备用 [codex.trygpt.asia](https://codex.trygpt.asia/login)；购买 [wzyp.cn/shop/maynorai](https://wzyp.cn/shop/maynorai)） |
 | 批量出图、接自己的产品 | **[API 聚合 TryAllAPI](https://tryallapi.com/)**（Flare / Sunburst） |
 | 网页免梯轻体验 | **[国内高速镜像](https://trygpt.asia/list/#/home)**（总览 [xianyu110.github.io/GPT6](https://xianyu110.github.io/GPT6/)） |
 
@@ -71,7 +71,7 @@
 - 国内站：https://momoai.asia/login  
 - 备用：https://codex.trygpt.asia/login  
 - 套餐页：https://momoai.asia/home  
-- 购买：https://momoai.dadoudou117.com/  
+- 购买：https://wzyp.cn/shop/maynorai  
 - 教程：https://news.maynorai.asia/blog/codex-china-gpt-5-6-launch  
 - 介绍页：https://codex.maynorai.top/
 
